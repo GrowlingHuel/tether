@@ -1633,6 +1633,19 @@ class ConstrainedApp:
         """Launch the first-run onboarding tooltip tour."""
         TetherOnboarding(self.root, self)
 
+    # ─────────────────────────────────────────────────────────────
+    # HELPERS
+    # ─────────────────────────────────────────────────────────────
+
+    @staticmethod
+    def _empty_analysis() -> dict:
+        return {
+            'word_count': 0, 'wpm': 0, 'violations': [], 'compliance': 100,
+            'letter_counts': {}, 'used_letters': set(),
+            'pang_progress': None, 'goal_progress': None,
+            'next_expected': None,
+        }
+
 
 class TetherOnboarding:
     """
@@ -1866,19 +1879,6 @@ class TetherOnboarding:
         if self.win:
             self.win.destroy()
         mark_onboarding_seen()
-
-    # ─────────────────────────────────────────────────────────────
-    # HELPERS
-    # ─────────────────────────────────────────────────────────────
-
-    @staticmethod
-    def _empty_analysis() -> dict:
-        return {
-            'word_count': 0, 'wpm': 0, 'violations': [], 'compliance': 100,
-            'letter_counts': {}, 'used_letters': set(),
-            'pang_progress': None, 'goal_progress': None,
-            'next_expected': None,
-        }
 
 
 # ═══════════════════════════════════════════════════════════════════
