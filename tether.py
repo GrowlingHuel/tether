@@ -992,7 +992,7 @@ class ConstrainedApp:
     def _dict_extras(self, parent):
         note = ("357,325-word SCOWL-80 wordlist loaded."
                 if WORDLIST else
-                "wordlist.txt not found — place it alongside constrained.py")
+                "wordlist.txt not found — place it alongside tether.py")
         tk.Label(parent, text=note,
                  fg=GREEN if WORDLIST else RED,
                  bg=BG3, font=("Courier New", 8)).pack(
@@ -1197,7 +1197,7 @@ class ConstrainedApp:
         content = self.text_widget.get("1.0", tk.END)
         r = self.deep.get('readability', {})
         lines = [
-            "CONSTRAINED — SESSION EXPORT",
+            "TETHER — SESSION EXPORT",
             "=" * 44, "",
             f"Date        : {datetime.now().strftime('%Y-%m-%d %H:%M')}",
             f"Mode        : {'Custom' if self.custom_constraints else self.active_preset['name']}",
@@ -1224,7 +1224,7 @@ class ConstrainedApp:
 
         desktop = os.path.join(os.path.expanduser("~"), "Desktop")
         os.makedirs(desktop, exist_ok=True)
-        path = os.path.join(desktop, f"constrained-{int(time.time())}.txt")
+        path = os.path.join(desktop, f"tether-{int(time.time())}.txt")
         try:
             with open(path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(lines))
