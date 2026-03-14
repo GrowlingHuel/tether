@@ -24,7 +24,7 @@ from datetime import datetime
 # APP DATA DIRECTORY  (persistent storage)
 # ═══════════════════════════════════════════════════════════════════
 
-VERSION = "0.3"
+VERSION = "0.3.2"
 GITHUB_REPO = "GrowlingHuel/tether"
 
 APP_DIR           = os.path.join(os.path.expanduser("~"), ".tether")
@@ -505,7 +505,7 @@ class ConstrainedApp:
 
     def __init__(self, root: tk.Tk):
         self.root = root
-        self.root.title("TETHER  v0.3")
+        self.root.title("TETHER  v0.3.2")
         self.root.configure(bg=BG)
         self.root.geometry("1200x760")
         self.root.minsize(880, 560)
